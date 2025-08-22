@@ -1,5 +1,5 @@
 # Configuration variables for the gig income prediction project
-
+'''
 import os
 
 # Paths
@@ -22,3 +22,4 @@ MODEL_PARAMS = {
 }
 
 # Other configuration variables can be added here as needed
+'''

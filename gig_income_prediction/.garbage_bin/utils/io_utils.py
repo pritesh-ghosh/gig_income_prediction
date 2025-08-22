@@ -1,3 +1,5 @@
+'''
+
 def load_csv(file_path):
     import pandas as pd
     return pd.read_csv(file_path)
@@ -23,3 +25,4 @@ def load_pickle(file_path):
 def save_pickle(data, file_path):
     import pandas as pd
     pd.to_pickle(data, file_path)
+    '''

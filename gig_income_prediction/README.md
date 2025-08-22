@@ -19,23 +19,18 @@ The Gig Income Prediction project aims to develop a predictive model for estimat
 - **main.py**: The entry script that runs the entire pipeline from data loading to model training and evaluation.
 
 ## Setup Instructions
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   cd gig_income_prediction
-   ```
 
-2. Install the required dependencies:
+1. Install the required dependencies:
    ```
    pip install -r requirements.txt
    ```
 
-3. Prepare the datasets by placing them in the `data/` directory.
+2. Prepare the datasets by placing them in the `data/` directory.
 
 ## Usage
 To run the entire pipeline, execute the following command:
 ```
-python main.py
+python -m gig_income_prediction.main
 ```
 
 This will load the data, perform feature engineering, train the models, and evaluate their performance.

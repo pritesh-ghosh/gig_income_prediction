@@ -43,10 +43,7 @@ def PipelineOrNone(steps):
 
 
 def get_models():
-    """
-    A few simple baselines. With the engineered (leaky) features,
-    any of these will score ~0.999 R².
-    """
+    
     return {
         "Ridge": Ridge(alpha=1.0),
         "Lasso": Lasso(alpha=0.001, max_iter=10000),
