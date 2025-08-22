@@ -1,32 +1,34 @@
-import os
-from utils.io_utils import load_data, save_model
-from features.feature_engineering import create_features
-from models.pipeline import create_pipeline
-from models.train import train_models
-from models.evaluate import evaluate_models
-from utils.config import DATA_PATH, MODEL_OUTPUT_PATH
+"""
+Main entrypoint for Gig Income Prediction project.
+
+This script:
+  1. Loads the dataset
+  2. Runs feature engineering
+  3. Trains models
+  4. Saves artifacts (metrics + best model)
+"""
+
+import sys
+from gig_income_prediction.models.train import load_data, train_and_evaluate
+from gig_income_prediction.features.feature_engineering import engineer_features
+
+# Path to dataset
+DATA_PATH = "gig_income_prediction/data/gig_worker_income_stability_fixed_500.xlsx"
 
 def main():
-    # Load the data
-    raw_data = load_data(os.path.join(DATA_PATH, 'raw_data.csv'))
-    
-    # Create features
-    features = create_features(raw_data)
-    
-    # Create the model pipeline
-    pipeline = create_pipeline()
-    
-    # Train models
-    trained_models = train_models(pipeline, features)
-    
-    # Evaluate models
-    evaluation_results = evaluate_models(trained_models, features)
-    
-    # Save the trained models
-    for model_name, model in trained_models.items():
-        save_model(model, os.path.join(MODEL_OUTPUT_PATH, f"{model_name}.pkl"))
-    
-    print("Training and evaluation completed successfully.")
+    try:
+        print("📂 Loading dataset...")
+        df = load_data(DATA_PATH)
+        print(f"✅ Loaded dataset with {len(df)} rows and {len(df.columns)} columns")
+
+        print("⚙️ Running training pipeline...")
+        train_and_evaluate(df)
+
+        print("🎉 Training complete. Artifacts saved in ./artifacts/")
+
+    except Exception as e:
+        print("❌ Error in main.py:", str(e))
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()

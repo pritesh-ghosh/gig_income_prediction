@@ -15,7 +15,7 @@ DATA_PATH = "gig_income_prediction/data/gig_worker_income_stability_fixed_500.xl
 TARGET = "net_earnings"
 TEST_SIZE = 0.20
 RANDOM_STATE = 42
-ARTIFACTS_DIR = Path("artifacts")
+ARTIFACTS_DIR = Path("/workspaces/gig_income_prediction/gig_income_prediction/artifacts")
 # ---------------
 
 def load_data(path: str) -> pd.DataFrame:
