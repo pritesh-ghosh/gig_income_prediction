@@ -3,6 +3,7 @@
 ## Overview
 The Gig Income Prediction project aims to develop a predictive model for estimating income from gig economy jobs. This project encompasses data processing, feature engineering, model training, and evaluation, providing a comprehensive framework for understanding and predicting gig income.
 
+Link for entire report - "https://docs.google.com/document/d/1Bbx4i2Mzxn6Py_cIr_mUXt0HVJH8kPjaAkEkEJg7ow8/edit?usp=sharing"
 ## Project Structure
 - **data/**: Contains raw and processed datasets used for training and evaluation.
 - **features/**: 
